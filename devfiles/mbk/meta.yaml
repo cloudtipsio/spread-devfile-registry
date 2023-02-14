@@ -4,5 +4,6 @@ description: OpenJDK 8 com Maven 3.3.3 e Redis 5.0
 tags: ["Java", "Maven", "Redis"]
 icon: /images/lombok.svg
 links:
-  # v2: https://gitlab.com/cloudtipsio-spread/mbk.git
-  v2: https://github.com/cloudtipsio/mbk.git
+  # v2: https://github.com/cloudtipsio/mbk/tree/main
+  v2: https://gitlab.com/cloudtipsio/mbk/-/tree/main
+
