@@ -1,0 +1,169 @@
+apiVersion: org.eclipse.che/v2
+kind: CheCluster
+metadata:
+  creationTimestamp: '2023-02-03T08:24:02Z'
+  finalizers:
+    - checluster.che.eclipse.org
+    - cheGateway.clusterpermissions.finalizers.che.eclipse.org
+    - cheWorkspaces.clusterpermissions.finalizers.che.eclipse.org
+    - namespaces-editor.permissions.finalizers.che.eclipse.org
+    - devWorkspace.permissions.finalizers.che.eclipse.org
+    - oauthclients.finalizers.che.eclipse.org
+    - dashboard.clusterpermissions.finalizers.che.eclipse.org
+    - consolelink.finalizers.che.eclipse.org
+  generation: 22
+  managedFields:
+    - apiVersion: org.eclipse.che/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:finalizers':
+            'v:"consolelink.finalizers.che.eclipse.org"': {}
+        'f:status':
+          'f:chePhase': {}
+          'f:cheURL': {}
+          'f:cheVersion': {}
+          'f:gatewayPhase': {}
+          'f:workspaceBaseDomain': {}
+      manager: manager
+      operation: Update
+      time: '2023-02-03T08:25:56Z'
+    - apiVersion: org.eclipse.che/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:components':
+            .: {}
+            'f:cheServer':
+              .: {}
+              'f:debug': {}
+              'f:logLevel': {}
+            'f:database':
+              .: {}
+              'f:credentialsSecretName': {}
+              'f:externalDb': {}
+              'f:postgresDb': {}
+              'f:postgresHostName': {}
+              'f:postgresPort': {}
+              'f:pvc':
+                .: {}
+                'f:claimSize': {}
+            'f:devfileRegistry':
+              'f:deployment': {}
+            'f:metrics':
+              .: {}
+              'f:enable': {}
+          'f:containerRegistry': {}
+          'f:devEnvironments':
+            'f:defaultComponents': {}
+            'f:secondsOfInactivityBeforeIdling': {}
+            'f:storage':
+              .: {}
+              'f:perUserStrategyPvcConfig':
+                .: {}
+                'f:claimSize': {}
+              'f:pvcStrategy': {}
+            .: {}
+            'f:defaultNamespace':
+              .: {}
+              'f:autoProvision': {}
+              'f:template': {}
+            'f:containerBuildConfiguration':
+              .: {}
+              'f:openShiftSecurityContextConstraint': {}
+            'f:disableContainerBuildCapabilities': {}
+            'f:secondsOfRunBeforeIdling': {}
+            'f:defaultEditor': {}
+          'f:gitServices': {}
+          'f:networking':
+            .: {}
+            'f:auth':
+              .: {}
+              'f:gateway':
+                .: {}
+                'f:configLabels':
+                  .: {}
+                  'f:app': {}
+                  'f:component': {}
+      manager: Mozilla
+      operation: Update
+      time: '2023-02-03T10:33:57Z'
+    - apiVersion: org.eclipse.che/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:components':
+            'f:devfileRegistry':
+              'f:deployment':
+                'f:containers': {}
+      manager: kubectl-patch
+      operation: Update
+      time: '2023-02-03T14:20:30Z'
+  name: devspaces
+  namespace: devspaces
+  resourceVersion: '386929'
+  uid: f827a998-d3f8-4062-8f90-89182f650c13
+spec:
+  components:
+    cheServer:
+      debug: false
+      logLevel: INFO
+    dashboard: {}
+    database:
+      credentialsSecretName: postgres-credentials
+      externalDb: false
+      postgresDb: dbche
+      postgresHostName: postgres
+      postgresPort: '5432'
+      pvc:
+        claimSize: 1Gi
+    devWorkspace: {}
+    devfileRegistry:
+      deployment:
+        containers:
+          - image: 'cloudtips/devfile-registry:v13'
+    imagePuller:
+      enable: false
+      spec: {}
+    metrics:
+      enable: true
+    pluginRegistry:
+      openVSXURL: 'https://open-vsx.org'
+  containerRegistry: {}
+  devEnvironments:
+    containerBuildConfiguration:
+      openShiftSecurityContextConstraint: container-build
+    defaultComponents:
+      - container:
+          image: >-
+            registry.redhat.io/devspaces/udi-rhel8@sha256:aa39ede33bcbda6aa2723d271c79ab8d8fd388c7dfcbc3d4ece745b7e9c84193
+          sourceMapping: /projects
+        name: universal-developer-image
+    defaultEditor: che-incubator/che-code/insiders
+    defaultNamespace:
+      autoProvision: true
+      template: <username>-devspaces
+    disableContainerBuildCapabilities: true
+    secondsOfInactivityBeforeIdling: 1800
+    secondsOfRunBeforeIdling: -1
+    storage:
+      perUserStrategyPvcConfig:
+        claimSize: 10Gi
+      pvcStrategy: per-user
+  gitServices: {}
+  networking:
+    auth:
+      gateway:
+        configLabels:
+          app: che
+          component: che-gateway-config
+status:
+  chePhase: Active
+  cheURL: 'https://devspaces.apps-crc.testing'
+  cheVersion: 3.3.0
+  devfileRegistryURL: 'https://devspaces.apps-crc.testing/devfile-registry'
+  gatewayPhase: Established
+  pluginRegistryURL: 'https://devspaces.apps-crc.testing/plugin-registry/v3'
+  postgresVersion: '13.7'
+  workspaceBaseDomain: apps-crc.testing

@@ -1,0 +1,8 @@
+---
+displayName: Python + Scala
+description: Python 3.8 com Scala 3.2.2 e Redis 5.0
+tags: [ "Java", "Maven", "Python", "Scala" ]
+icon: /images/python-scala.svg
+links:
+  v2: https://github.com/cloudtipsio/python-scala/tree/main
+
